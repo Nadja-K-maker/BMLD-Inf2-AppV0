@@ -7,3 +7,4 @@ pg_second = st.Page("views/unterseite_a.py", title="Unterseite A", icon=":materi
 
 pg = st.navigation([pg_home, pg_second])
 pg.run()
+
