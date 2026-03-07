@@ -24,3 +24,4 @@ if st.button("Budget berechnen"):
         st.warning("Mit diesem Sparziel wird es knapp.")
     else:
         st.success("Budget passt gut! Du kannst dein Sparziel erreichen.")
+
