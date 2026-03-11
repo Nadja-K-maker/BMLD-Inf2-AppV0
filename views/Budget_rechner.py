@@ -1,5 +1,7 @@
+import pandas as pd  # --- NEW CODE: add pandas to the imports ---
 import streamlit as st
 from functions.Budget import calculate_costs
+#import panda as pd
 
 st.title("Budget-Rechner")
 
