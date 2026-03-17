@@ -19,6 +19,7 @@ if st.button("Budget berechnen"):
     st.write("Total Kosten:", f"{total_costs:.2f} CHF")
     st.write("Übrig:", f"{remaining:.2f} CHF")
     st.write("Übrig nach Sparziel:", f"{after_saving:.2f} CHF")
+    st.write(f'Berechnet am: {result["timestamp"].strftime("%d.%m.%Y %H:%M:%S")}')
 
     if remaining < 0:
         st.error("Du gibst mehr aus als du einnimmst.")
