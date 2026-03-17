@@ -1,7 +1,8 @@
+from unittest import result
+
 import pandas as pd  # --- NEW CODE: add pandas to the imports ---
 import streamlit as st
-from functions.Budget import calculate_costs
-#import panda as pd
+from functions.Budget import calculate_budget, calculate_costs
 
 st.title("Budget-Rechner")
 
@@ -15,11 +16,12 @@ if st.button("Budget berechnen"):
     total_costs, remaining, after_saving = calculate_costs(
         income, rent, food, other, savings_goal)
 
+    result = calculate_budget(income, rent, food, other, savings_goal)
     st.subheader("Ergebnis")
     st.write("Total Kosten:", f"{total_costs:.2f} CHF")
     st.write("Übrig:", f"{remaining:.2f} CHF")
     st.write("Übrig nach Sparziel:", f"{after_saving:.2f} CHF")
-    st.write(f'Berechnet am: {result["timestamp"].strftime("%d.%m.%Y %H:%M:%S")}')
+    st.write("Berechnet am:", result["timestamp"].strftime("%d.%m.%Y %H:%M:%S"))
 
     if remaining < 0:
         st.error("Du gibst mehr aus als du einnimmst.")
