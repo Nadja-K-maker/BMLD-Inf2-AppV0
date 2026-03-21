@@ -1,14 +1,14 @@
 import streamlit as st
 
-st.title('BMI Verlauf')
+st.title('Verlauf der Budgetwerte')
 
 data_df = st.session_state['data_df']
 if data_df.empty:
-    st.info('Keine BMI Daten vorhanden. Berechnen Sie Ihren BMI auf der Startseite.')
+    st.info('Keine Budgetdaten vorhanden. Erstellen Sie ein neues Budget auf der Startseite.')
     st.stop()
 
-# Weight over time
+# Total costs over time
 st.line_chart(data=data_df.set_index('timestamp')['total_costs'])
-st.caption('Gewicht über Zeit (kg)')
+st.caption('Gesamtkosten über Zeit (CHF)')
 
 
