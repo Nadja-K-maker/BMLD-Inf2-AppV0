@@ -8,7 +8,10 @@ if data_df.empty:
     st.stop()
 
 # Total costs over time
-st.line_chart(data=data_df.set_index('timestamp')['total_costs'])
-st.caption('Gesamtkosten über Zeit (CHF)')
+# Total costs over time
+chart_df = data_df.set_index('timestamp')[['total_costs', 'remaining', 'after_saving']]
+st.line_chart(data=chart_df)
+
+st.caption('Kosten, verbleibend und nach Sparen über Zeit (CHF)')
 
 
