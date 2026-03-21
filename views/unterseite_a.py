@@ -8,13 +8,7 @@ if data_df.empty:
     st.stop()
 
 # Weight over time
-st.line_chart(data=data_df.set_index('timestamp')['weight'])
+st.line_chart(data=data_df.set_index('timestamp')['total_costs'])
 st.caption('Gewicht über Zeit (kg)')
 
-# Height over time
-st.line_chart(data=data_df.set_index('timestamp')['height'])
-st.caption('Größe über Zeit (m)')
 
-# BMI over time
-st.line_chart(data=data_df.set_index('timestamp')['bmi'])
-st.caption('BMI über Zeit')
