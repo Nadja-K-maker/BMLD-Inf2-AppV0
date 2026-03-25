@@ -34,11 +34,11 @@ if st.button("Budget berechnen"):
 
 
  
-st.session_state['data_df'] = pd.concat([st.session_state['data_df'], pd.DataFrame([result])])
+    st.session_state['data_df'] = pd.concat([st.session_state['data_df'], pd.DataFrame([result])])
  
  #  CODE UPDATE: save data to data manager ---
-data_manager = DataManager()
-data_manager.save_user_data(st.session_state['data_df'], 'data.csv')
+    data_manager = DataManager()
+    data_manager.save_user_data(st.session_state['data_df'], 'data.csv')
     # --- END OF CODE UPDATE ---
 
 # display the data frame in a table
